@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Church App',
+      title: 'Church Applications',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -24,42 +24,51 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Church App'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                // Navigate to the Church History screen
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ChurchHistoryPage()),
-                );
-              },
-              child: Text('Church History'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                // Navigate to the Daily Verses screen
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => DailyVersesPage()),
-                );
-              },
-              child: Text('Daily Verses'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                // Navigate to the Reminders screen
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => RemindersPage()),
-                );
-              },
-              child: Text('Reminders'),
-            ),
-          ],
-        ),
+      body: Stack(
+        alignment: Alignment.center,
+        children: <Widget>[
+          Image(
+            image: AssetImage('assets/home.jpg'),
+            fit: BoxFit.cover,
+            width: double.infinity,
+            height: double.infinity,
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              ElevatedButton(
+                onPressed: () {
+                  // Navigate to the Church History screen
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ChurchHistoryPage()),
+                  );
+                },
+                child: Text('Church History'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  // Navigate to the Daily Verses screen
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DailyVersesPage()),
+                  );
+                },
+                child: Text('Daily Verses'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  // Navigate to the Reminders screen
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => RemindersPage()),
+                  );
+                },
+                child: Text('Reminders'),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
@@ -89,7 +98,7 @@ class DailyVersesPage extends StatelessWidget {
         title: Text('Daily Verses'),
       ),
       body: Center(
-        child: Text('Pushing of daily notifications'),
+        child: Text('Pushing of notifications'),
       ),
     );
   }
